@@ -1,31 +1,13 @@
-import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.material3.darkColorScheme
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 
-@Composable
-@Preview
-fun App() {
-    var text by remember { mutableStateOf("Hello, World!") }
-
-    MaterialTheme(colorScheme = Colors.ThemeColorScheme.blueColorScheme) {
-        Button(onClick = {
-            text = "Hello, Desktop!"
-        }) {
-            Text(text)
+fun main() {
+    application {
+        Window(onCloseRequest = ::exitApplication) {
+            MaterialTheme(darkColorScheme()) {
+            }
         }
-    }
-}
-
-fun main() = application {
-    Window(onCloseRequest = ::exitApplication) {
-        App()
     }
 }
